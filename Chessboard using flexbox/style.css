@@ -1,0 +1,32 @@
+*,
+*::before
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:200vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    display:flex;
+    flex-wrap:wrap;
+    width:50vw;
+    height:50vw;
+    border: 5px solid black;
+  
+}
+
+div{
+    width:20%;
+    height: 20%;
+    background-color: #000;
+}
+div:nth-child(odd){
+    background-color: #fff;
+}

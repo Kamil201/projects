@@ -1,0 +1,101 @@
+*{
+     margin:0;
+     padding:0;
+     box-sizing: border-box;
+}
+
+body{
+    overflow:hidden;
+    background-color:royalblue;
+}
+
+.container{
+    position:fixed;
+    height:8vh;
+    width:75px;
+    background-color:white;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    border-bottom-right-radius:50px;
+    transition: .3s cubic-bezier(.63,-0.13,.32,1.24);
+}
+
+ul li{
+    list-style:none;
+    color:deeppink;
+    font-family:tahoma;
+    font-size: 30px;
+    cursor:pointer;
+    padding-bottom: 5px;
+    transform:translate(-500px);
+    opacity:0;
+    transition:transform .6s cubic-bezier(1,-0.69,.55,1.5);
+
+}
+
+ul li:hover{
+    color:black;
+}
+
+input{
+    display:none;
+}
+label{
+    z-index:99;
+    position:fixed;
+    top:5px;
+    left:20px;
+    cursor:pointer;
+    transition: .3s cubic-bezier(1,-0.21,.2,1.31);
+}
+
+ label > div{
+    height: 5px;
+    width:35px;
+    background:deeppink;
+    margin:5px;
+    transition: transform .3s;
+} 
+
+label:hover > div{
+background:black;
+
+}
+
+#toggle-nav:checked ~ .container{
+height:100vh;
+width:275px;
+}
+
+#toggle-nav:checked~ label{
+    left:calc(250px - 40px);
+}
+
+#toggle-nav:checked~label > div:nth-child(1){
+    transform:rotateZ(45deg);
+    margin-top:18px;
+}
+
+#toggle-nav:checked~label > div:nth-child(3){
+    transform:rotateZ(-45deg);
+    margin-top:-20px;
+}
+#toggle-nav:checked~label > div:nth-child(2){
+    opacity:0;
+}
+#toggle-nav:checked ~ .container ul li{
+    transform:translateY(-0px);
+    opacity:1;
+} 
+
+.content{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    padding:50px;
+    font-family:Verdana; 
+    text-align:justify;
+    line-height:25px;
+    color:white;
+} 
